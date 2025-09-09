@@ -9,7 +9,7 @@ import torch
 import torch.multiprocessing as mp
 import numpy as np
 
-from prover.utils import AttrDict, get_datetime
+from utils import AttrDict, get_datetime
 
 
 class SearchProcess(mp.Process):
