@@ -43,12 +43,21 @@ def extract_lean_code(response, header=""):
     proof_body = proof_body_match.group(1).strip()
 
     sorry_pattern = re.compile(r":=\s*sorry", re.DOTALL)
-    new_code, num_replacements = sorry_pattern.subn(f":= {proof_body}", header)
+    match = None
+    num_match = 0
+    for match in sorry_pattern.finditer(header):
+        num_match += 1
+    
+    if match:
+        start, end = match.span()
+        new_code = header[:start] + f":= {proof_body}" + header[end:]
+    else:
+        new_code = header
 
-    if num_replacements > 0:
+    if num_match == 1:
         return new_code.strip()
     else:
-        return extracted_code
+        raise ValueError(f"No ':= sorry' pattern found in header to replace with proof body")
 
 
 def format_error_check(output, status):
