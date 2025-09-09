@@ -4,7 +4,7 @@ import argparse
 import pandas as pd
 from termcolor import colored
 
-from prover.utils import get_datetime, load_config, load_jsonl_objects
+from utils import get_datetime, load_config, load_jsonl_objects
 
 
 if __name__ == '__main__':

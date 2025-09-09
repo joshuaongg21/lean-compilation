@@ -12,9 +12,9 @@ from pprint import pprint
 
 import numpy as np
 
-from prover.lean.ast_parser import lean4_parser
-from prover.workers import ProcessScheduler
-from prover.utils import AttrDict
+from lean.ast_parser import lean4_parser
+from workers import ProcessScheduler
+from utils import AttrDict
 
 
 HOME_DIR = os.path.expanduser('~')

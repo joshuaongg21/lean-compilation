@@ -6,9 +6,9 @@ import argparse
 
 import torch
 
-from prover.workers import DataLoader, Scheduler, ProcessScheduler, GeneratorProcess, SearchProcess
-from prover.lean.verifier import Lean4ServerScheduler
-from prover.utils import get_datetime, load_config, AttrDict
+from workers import DataLoader, Scheduler, ProcessScheduler, GeneratorProcess, SearchProcess
+from lean.verifier import Lean4ServerScheduler
+from utils import get_datetime, load_config, AttrDict
 
 
 if __name__ == "__main__":
